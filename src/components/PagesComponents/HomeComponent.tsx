@@ -1,10 +1,13 @@
+import { useMenuContext } from "@/context/MenuContext";
 import Head from "next/head";
 
 
 const HomeComponent = () => {
 
+  const { isMenuOpen } = useMenuContext();
+
   return (
-    <div className="w-full calc-c-header overflow-y-auto  shadow-md p-3 bg-white">
+    <div className={`w-full calc-c-header overflow-y-auto  shadow-md p-3 bg-white ${isMenuOpen && 'hidden sm:block'}`}>
       <Head>
         <title>Inicio</title>
       </Head>
