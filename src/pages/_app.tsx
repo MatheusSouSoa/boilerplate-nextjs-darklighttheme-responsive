@@ -1,3 +1,4 @@
+import ProfilePictureMenu from "@/components/_ui/ProfilePictureMenu";
 import Header from "@/components/Header";
 import MainContainer from "@/components/MainContainer";
 import { MainMenu } from "@/components/MainMenu";
@@ -19,6 +20,7 @@ export default function App({ Component, pageProps }: AppProps) {
           <title>Rachão</title>
         </Head>
         <Header />
+        <ProfilePictureMenu/>
         <MainContainer>
           <MainMenu />
           <Component {...pageProps} />

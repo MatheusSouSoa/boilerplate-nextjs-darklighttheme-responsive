@@ -1,8 +1,10 @@
 import React from 'react';
 
 interface MenuContextType {
+  isProfileMenuOpen: boolean;
   isMenuOpen: boolean;
   toggleMenu: () => void;
+  toggleProfileMenu: () => void;
 }
 
 const MenuContext = React.createContext<MenuContextType | undefined>(undefined);
@@ -17,13 +19,16 @@ export const useMenuContext = () => {
 
 export const MenuProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [isMenuOpen, setMenuOpen] = React.useState(false);
+  const [isProfileMenuOpen, setProfileMenuOpen] = React.useState(false);
 
   const toggleMenu = () => setMenuOpen(!isMenuOpen);
+  const toggleProfileMenu = () => setProfileMenuOpen(!isProfileMenuOpen);
 
   React.useEffect(() => {
     function handleResize() {
       if (window.innerWidth <= 640 && isMenuOpen) {
         setMenuOpen(false);
+        setProfileMenuOpen(false);
       }
     }
 
@@ -34,7 +39,7 @@ export const MenuProvider: React.FC<{ children: React.ReactNode }> = ({ children
   }, [isMenuOpen]);
 
   return (
-    <MenuContext.Provider value={{ isMenuOpen, toggleMenu }}>
+    <MenuContext.Provider value={{ isMenuOpen, toggleMenu, isProfileMenuOpen, toggleProfileMenu}}>
       {children}
     </MenuContext.Provider>
   );

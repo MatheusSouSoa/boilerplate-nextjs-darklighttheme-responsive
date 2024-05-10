@@ -24,11 +24,6 @@ const UseSideMenuItems = (): SideMenuItem[] => {
       path: "/pelada",
       icon: <SoccerBall />,
     },
-    {
-      title: "Configurações",
-      path: "/configuracoes",
-      icon: <Gear />,
-    },
   ];
 
   return sideMenuItems;
