@@ -31,3 +31,7 @@ body {
     text-wrap: balance;
   }
 }
+
+.calc-c-header {
+  height: calc(100vh - 48px);
+}
