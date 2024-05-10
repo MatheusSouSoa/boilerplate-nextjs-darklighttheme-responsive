@@ -7,7 +7,7 @@ interface ContainerProps {
 const MainContainer = ({children}: ContainerProps) => {
 
   return (
-    <div className="container h-full w-full text-black flex flex-col sm:flex-row">
+    <div className=" h-full w-full text-black flex flex-col sm:flex-row overflow-y-hidden ">
       {children}
     </div>
   )

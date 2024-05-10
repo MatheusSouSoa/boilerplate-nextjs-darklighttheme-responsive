@@ -1,10 +1,15 @@
 import { useMenuContext } from "@/context/MenuContext";
-import sideMenuItems from "@/useCases/MainMenuItems";
+import UseSideMenuItems from "@/hooks/UseSideMenuItems";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const MainMenu = () => {
 
   const { isMenuOpen } = useMenuContext();
+
+  const sideMenuItems = UseSideMenuItems()
+
+  const router = useRouter();
 
   return (
     <div className={`calc-c-header border w-auto xl:w-1/5 shadow-md bg-white ${!isMenuOpen && 'hidden sm:block'}`}>
@@ -16,7 +21,7 @@ const MainMenu = () => {
           >
             <Link
               href={item.path}
-              className="p-2 rounded-md flex gap-1 items-center sm:justify-center xl:justify-start bg-zinc-100 hover:bg-zinc-200 cursor-pointer"
+              className={`w-full flex items-center p-2 rounded-lg ${router.pathname === item.path ? 'bg-gray-300' : 'hover:bg-gray-100'}`}
             >
               <span className="xl:mr-2">{item.icon}</span>
               <p className=" sm:hidden xl:block">{item.title}</p>
