@@ -20,7 +20,6 @@ export default function App({ Component, pageProps }: AppProps) {
           <title>Rachão</title>
         </Head>
         <Header />
-        <ProfilePictureMenu/>
         <MainContainer>
           <MainMenu />
           <Component {...pageProps} />
