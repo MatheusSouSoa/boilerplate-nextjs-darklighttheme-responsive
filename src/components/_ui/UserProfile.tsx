@@ -1,5 +1,5 @@
 import { UserProfileProps } from "@/@types/User";
-import { useMenuContext } from "@/context/MenuContext";
+import { useMenuContext } from "@/context/MenuProvider";
 import Image from "next/image";
 import Link from "next/link";
 

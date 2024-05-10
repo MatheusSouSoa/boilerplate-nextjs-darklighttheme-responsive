@@ -1,4 +1,4 @@
-import { useMenuContext } from "@/context/MenuContext";
+import { useMenuContext } from "@/context/MenuProvider";
 import Link from "next/link";
 import UserProfilePicture, { UserProfilePictureProps } from "./_ui/UserProfile";
 import { SoccerBall } from "phosphor-react";
@@ -19,7 +19,7 @@ const Header = () => {
         <button
           onClick={toggleMenu}
           className={`w-7 flex-col gap-1 items-center justify-center flex sm:hidden`}
-          >
+        >
           <div className="w-full h-1 bg-black"></div>
           <div className="w-full h-1 bg-black"></div>
           <div className="w-full h-1 bg-black"></div>
@@ -28,30 +28,34 @@ const Header = () => {
           <Link
             className="rounded-full bg-green-700 px-2 p-1 flex flex-col items-center justify-center"
             href={"/"}
-            >
+          >
             <div className="flex">
-              <p className="hidden sm:block">
-                Rachão 
-              </p>
-              <SoccerBall size={24} className="animate-spin ani" />
+              <p className="hidden sm:block">Rachão</p>
+              <SoccerBall
+                size={24}
+                className="animate-spin ani"
+              />
             </div>
             <div className="hidden sm:flex w-full justify-end pr-2">
-              <hr className="bg-white w-10"/>
+              <hr className="bg-white w-10" />
             </div>
           </Link>
         </h1>
       </div>
       <div className="flex justify-center items-center">
-          <ClickOutsideDetector onClickOutside={toggleProfileMenu} isOpen={isProfileMenuOpen}>
-            <UserProfilePicture
+        <ClickOutsideDetector
+          onClickOutside={toggleProfileMenu}
+          isOpen={isProfileMenuOpen}
+        >
+          <UserProfilePicture
             profileCard={{ sideName: "left", logout: true }}
             user={{
               name: mockedUser.name,
               profilePicture: mockedUser.profilePicture,
             }}
-            />
-            <ProfilePictureMenu/>
-          </ClickOutsideDetector>
+          />
+          <ProfilePictureMenu />
+        </ClickOutsideDetector>
       </div>
     </header>
   );

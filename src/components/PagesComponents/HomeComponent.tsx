@@ -1,4 +1,4 @@
-import { useMenuContext } from "@/context/MenuContext";
+import { useMenuContext } from "@/context/MenuProvider";
 
 const HomeComponent = () => {
   const { isMenuOpen } = useMenuContext();
@@ -10,7 +10,7 @@ const HomeComponent = () => {
       }`}
     >
       <div className="w-full h-full p-3">
-      {/* <div className="w-full h-[5000px] bg-red-500 "> */}
+        {/* <div className="w-full h-[5000px] bg-red-500 "> */}
         <h1>Hello world</h1>
         <p>This is my first Next.js app</p>
       </div>
