@@ -1,7 +1,7 @@
 import ComponentContainer from "@/components/_ui/ComponentContainer";
 
 
-export default function PerfilPage () {
+export default function PeladaPage () {
 
   return (
     <ComponentContainer>

@@ -6,6 +6,7 @@ export interface UserProps {
   email: string;
   username: string;
   password: string;
+  profilePictureURl: string;
 }
 
 export interface IAuthenticateUser {

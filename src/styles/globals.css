@@ -6,20 +6,24 @@
   height: calc(100vh - 50px);
 }
 
+.calc-c-content {
+  height: calc(100vh - 90px);
+}
 
 /* Estilos personalizados para a barra de rolagem */
-.scrollbar-custom::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 8px; /* Largura da barra de rolagem */
   border-radius: 999px; /* Torna a barra de rolagem redonda */
 }
 
-.scrollbar-custom::-webkit-scrollbar-thumb {
-  background-color: #727272; /* Altera a cor da barra de rolagem */
+::-webkit-scrollbar-thumb {
+  background-color: #686767; /* Altera a cor da barra de rolagem */
   border-radius: 20px; /* Remove a borda */
 }
 
-.scrollbar-custom::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
   background-color: transparent; /* Altera a cor de fundo da área da barra de rolagem */
   border: none; /* Remove a borda */
 }
+
 

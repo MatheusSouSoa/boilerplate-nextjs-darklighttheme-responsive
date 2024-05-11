@@ -18,7 +18,7 @@ const Header = () => {
   const { theme } = useTheme();
 
   return (
-    <header className={`w-full ${theme !== 'dark' ? 'bg-white text-black' : 'bg-zinc-800 text-white'} p-3 h-12 flex justify-between shadow-xl`}>
+    <header className={`w-full ${theme !== 'dark' ? 'bg-white text-black' : 'bg-zinc-800 text-white border-zinc-500'} p-3 h-12 flex justify-between shadow-xl border-b`}>
       <div className="flex items-center gap-2">
         <button
           onClick={toggleMenu}
@@ -28,6 +28,7 @@ const Header = () => {
           <div className={`w-full h-1 bg-black`}></div>
           <div className={`w-full h-1 bg-black`}></div>
         </button>
+        {/* aqui vai o logo */}
         <h1 className="font-black">
           <Link
             className="rounded-full bg-green-700 px-2 p-1 flex flex-col items-center justify-center"

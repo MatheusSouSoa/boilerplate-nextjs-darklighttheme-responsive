@@ -3,6 +3,8 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 interface ThemeContextType {
   theme: string;
   toggleTheme: () => void;
+  getThemeClassName: () => string;
+  getInputClassName: () => string;
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
@@ -16,10 +18,23 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
   useEffect(() => {
     if (typeof window !== "undefined") {
       const storedTheme = localStorage.getItem("theme");
-      setTheme(storedTheme  ? storedTheme : 'light');
+      setTheme(storedTheme ? storedTheme : "light");
       setIsWindowChecked(true);
     }
   }, []);
+
+  const getInputClassName = () => {
+    const inputClassName =
+      theme === "dark" ? "bg-zinc-500 text-white border-zinc-700" : "bg-zinc-100 text-black border-blue-500";
+    return inputClassName;
+  };
+
+  const getThemeClassName = () => {
+    const themeClassName =
+      theme === "dark" ? "bg-zinc-800 text-white" : "bg-white text-black";
+
+    return themeClassName;
+  };
 
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
@@ -32,7 +47,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
   }
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <ThemeContext.Provider value={{ theme, toggleTheme, getThemeClassName, getInputClassName }}>
       {children}
     </ThemeContext.Provider>
   );

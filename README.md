@@ -38,3 +38,56 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+condecoracoes:  acougueiro, entregador, maratonista, velocista, garcom, decisivo, xerife, muralha, meastro, arqueiro, as dos ares, banherista, paredao, tartaruga, foguete
+capitao
+
+com base nessas condecoracoes seram definidos os atributos de cada usuario
+
+goleiro:
+Muralha 
+
+Defesa:
+Paredão
+Xerife
+libero
+Cobra
+
+Ataque:
+Decisivo
+Arqueiro
+Vesgo
+
+Meio-campo:
+Elegante (joga de terno)
+Garçom
+pitbull
+olhos de aguia
+
+Velocidade:
+lesma
+Velocista
+Foguete
+
+jogo aereo:
+As dos ares 
+chuveirinho
+
+drible:
+rabiscador
+firulento
+
+
+mental:
+gelado
+onipresente (esta em varios lugares num piscar de olhos)
+capitao
+papai noel (entrega presente)
+brigao
+polivalente
+
+Físico:
+Maratonista (incansavel)
+idoso (pouco folego)
+Tartaruga (pode ser interpretada como resistência física)

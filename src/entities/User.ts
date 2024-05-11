@@ -6,6 +6,7 @@ class User implements UserProps {
   email: string;
   username: string;
   password: string;
+  profilePictureURl: string;
 
   constructor(id: number, name: string, email: string, password: string, username: string) {
     this.id = id;
@@ -13,6 +14,7 @@ class User implements UserProps {
     this.email = email;
     this.username = username;
     this.password = password;
+    this.profilePictureURl = "";
   }
 
   updateEmail(email: string) {

@@ -1,28 +1,33 @@
-import { Gear, House, Person, SoccerBall, User } from "phosphor-react";
+import { Gear, House, Person, PokerChip, Screencast, SoccerBall, User, X } from "phosphor-react";
 import { ReactNode } from "react";
 
 export interface SideMenuItem {
   title: string;
   path: string;
-  icon: ReactNode;
+  icon?: ReactNode;
 }
 
 const UseSideMenuItems = (): SideMenuItem[] => {
   const sideMenuItems: SideMenuItem[] = [
     {
-      title: "Home",
+      title: "Inputs e buttons",
       path: "/",
       icon: <House />,
     },
     {
-      title: "Perfil",
-      path: "/perfil",
-      icon: <User />,
+      title: "Modal",
+      path: "/modal",
+      icon: <PokerChip />,
     },
     {
-      title: "Pelada",
-      path: "/pelada",
-      icon: <SoccerBall />,
+      title: "Displays",
+      path: "/display",
+      icon: <Screencast />,
+    },
+    {
+      title: "Not Found",
+      path: "/404",
+      icon: <X />,
     },
   ];
 
