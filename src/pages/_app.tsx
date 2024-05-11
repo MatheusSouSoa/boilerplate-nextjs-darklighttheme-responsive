@@ -1,5 +1,3 @@
-'use client'
-
 import Header from "@/components/Header";
 import PageContainer from "@/components/PageContainer"; 
 import { MainMenu } from "@/components/MainMenu";

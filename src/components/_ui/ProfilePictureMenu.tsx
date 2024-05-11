@@ -1,5 +1,3 @@
-'use client'
-
 import usePictureMenuItems from "@/hooks/UsePictureMenuItems";
 import LiPrimaryButton from "./LiPrimaryButton";
 import { useMenuContext } from "@/context/MenuProvider";

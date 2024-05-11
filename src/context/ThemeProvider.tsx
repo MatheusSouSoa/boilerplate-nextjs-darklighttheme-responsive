@@ -1,6 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 
-// Definindo o contexto do tema
 interface ThemeContextType {
   theme: string;
   toggleTheme: () => void;
@@ -17,11 +16,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
   useEffect(() => {
     if (typeof window !== "undefined") {
       const storedTheme = localStorage.getItem("theme");
-      if (storedTheme) {
-        setTheme(storedTheme);
-      } else {
-        setTheme("light");
-      }
+      setTheme(storedTheme  ? storedTheme : 'light');
       setIsWindowChecked(true);
     }
   }, []);
@@ -33,7 +28,6 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
   };
 
   if (!isWindowChecked) {
-    // A verificação do window ainda não foi concluída, então não renderize nada
     return null;
   }
 

@@ -1,5 +1,3 @@
-'use client'
-
 import { useTheme } from "@/context/ThemeProvider";
 import { Inter } from "next/font/google";
 import { ReactNode } from "react";

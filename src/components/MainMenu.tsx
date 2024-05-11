@@ -34,8 +34,8 @@ const MainMenu = () => {
               href={item.path}
               className={`w-full flex items-center p-2 rounded-lg ${
                 router.pathname === item.path
-                  ? "bg-gray-300"
-                  : "hover:bg-gray-300"
+                  ? `${theme !== 'dark' ? 'bg-zinc-300' : 'bg-zinc-800'}`
+                  : `${theme !== 'dark' ? 'hover:bg-zinc-300' : 'hover:bg-zinc-800'}`
               }`}
             >
               <span className="xl:mr-2">{item.icon}</span>
