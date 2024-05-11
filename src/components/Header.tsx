@@ -17,10 +17,6 @@ const Header = () => {
 
   const { theme } = useTheme();
 
-  useEffect(() => {
-    console.log(theme);
-  }, [theme]);
-
   return (
     <header className={`w-full ${theme !== 'dark' ? 'bg-white text-black' : 'bg-zinc-800 text-white'} p-3 h-12 flex justify-between shadow-xl`}>
       <div className="flex items-center gap-2">

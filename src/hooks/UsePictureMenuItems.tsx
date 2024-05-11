@@ -13,8 +13,8 @@ const usePictureMenuItems = (): LiPrimaryButtonProps[] => {
     },
     {
       title: "Tema",
-      icon: theme == "dark" ? <Sun /> : <Moon />,
-      onClick: () => toggleTheme(),
+      icon: theme === "dark" ? <Sun /> : <Moon />,
+      onClick: toggleTheme,
     },
     {
       title: "Sair",

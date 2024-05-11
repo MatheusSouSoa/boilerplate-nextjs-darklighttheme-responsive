@@ -21,7 +21,7 @@ const UserProfilePicture = ({ user, profileCard }: UserProfileProps) => {
     <div className="flex text-xs justify-center items-center gap-2 ">
       {profileCard.sideName == "left" && (
         <Link
-          className="hover:underline"
+          className="hover:underline font-bold"
           href={"/perfil"}
         >
           {user.name}

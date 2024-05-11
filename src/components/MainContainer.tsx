@@ -14,7 +14,7 @@ const MainContainer = ({ children }: MainContainerProps) => {
 
   return (
     <main
-      className={`min-h-screen ${theme !== 'light' ? 'bg-zinc-700 text-white' : 'bg-zinc-100 text-black'} ${inter.className} flex flex-col justify-center items-center overflow-y-hidden`}
+      className={`scrollbar-custom min-h-screen ${theme !== 'light' ? 'bg-zinc-700 text-white' : 'bg-zinc-100 text-black'} ${inter.className} flex flex-col justify-center items-center overflow-y-hidden`}
       suppressHydrationWarning
     >
       {children}
