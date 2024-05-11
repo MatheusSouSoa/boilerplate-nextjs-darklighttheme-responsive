@@ -1,4 +1,5 @@
 import { useMenuContext } from "@/context/MenuProvider";
+import { useTheme } from "@/context/ThemeProvider";
 import UseSideMenuItems from "@/hooks/UseSideMenuItems";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -8,6 +9,8 @@ const MainMenu = () => {
 
   const sideMenuItems = UseSideMenuItems();
 
+  const { theme } =useTheme();
+
   const handleMenuItem = () => {
     toggleMenu();
   };
@@ -16,7 +19,7 @@ const MainMenu = () => {
 
   return (
     <div
-      className={`calc-c-header w-auto xl:w-1/6 shadow-md ${
+      className={`calc-c-header border-r border-zinc-400 w-auto xl:w-1/6 shadow-md ${
         !isMenuOpen && "hidden sm:block"
       }`}
     >

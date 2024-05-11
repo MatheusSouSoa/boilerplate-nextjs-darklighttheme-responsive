@@ -18,7 +18,7 @@ const UserProfilePicture = ({ user, profileCard }: UserProfileProps) => {
   const { toggleProfileMenu } = useMenuContext();
 
   return (
-    <div className="flex text-xs justify-center items-center gap-2 text-black">
+    <div className="flex text-xs justify-center items-center gap-2 ">
       {profileCard.sideName == "left" && (
         <Link
           className="hover:underline"
@@ -36,7 +36,8 @@ const UserProfilePicture = ({ user, profileCard }: UserProfileProps) => {
             src={user.profilePicture}
             alt={user.name}
             width={32}
-            height={26}
+            height={32}
+            priority
           />
         ) : (
           <p className="text-center w-[24px] h-[24px] flex items-center justify-center bg-zinc-500">

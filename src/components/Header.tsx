@@ -4,6 +4,8 @@ import UserProfilePicture, { UserProfilePictureProps } from "./_ui/UserProfile";
 import { SoccerBall } from "phosphor-react";
 import ProfilePictureMenu from "./_ui/ProfilePictureMenu";
 import { ClickOutsideDetector } from "./_ui/ClickOutsideDetector";
+import { useTheme } from "@/context/ThemeProvider";
+import { useEffect } from "react";
 
 const mockedUser: UserProfilePictureProps = {
   name: "Matheus Soares",
@@ -13,23 +15,29 @@ const mockedUser: UserProfilePictureProps = {
 const Header = () => {
   const { toggleMenu, isProfileMenuOpen, toggleProfileMenu } = useMenuContext();
 
+  const { theme } = useTheme();
+
+  useEffect(() => {
+    console.log(theme);
+  }, [theme]);
+
   return (
-    <header className=" w-full bg-white p-3 h-12 flex justify-between shadow-xl">
+    <header className={`w-full ${theme !== 'dark' ? 'bg-white text-black' : 'bg-zinc-800 text-white'} p-3 h-12 flex justify-between shadow-xl`}>
       <div className="flex items-center gap-2">
         <button
           onClick={toggleMenu}
           className={`w-7 flex-col gap-1 items-center justify-center flex sm:hidden`}
         >
-          <div className="w-full h-1 bg-black"></div>
-          <div className="w-full h-1 bg-black"></div>
-          <div className="w-full h-1 bg-black"></div>
+          <div className={`w-full h-1 bg-black`}></div>
+          <div className={`w-full h-1 bg-black`}></div>
+          <div className={`w-full h-1 bg-black`}></div>
         </button>
         <h1 className="font-black">
           <Link
             className="rounded-full bg-green-700 px-2 p-1 flex flex-col items-center justify-center"
             href={"/"}
           >
-            <div className="flex">
+            <div className="flex text-white">
               <p className="hidden sm:block">Rachão</p>
               <SoccerBall
                 size={24}

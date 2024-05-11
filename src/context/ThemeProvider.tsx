@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from "react";
 
 // Definindo o contexto do tema
 interface ThemeContextType {
@@ -8,35 +8,34 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-export const ThemeProvider:  React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [theme, setTheme] = useState<string>(getInitialTheme());
+export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
+  const [isWindowChecked, setIsWindowChecked] = useState<boolean>(false);
+  const [theme, setTheme] = useState<string>("light");
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    const handleChange = () => {
-      setTheme(getInitialTheme());
-    };
-    mediaQuery.addEventListener('change', handleChange); 
-    return () => {
-      mediaQuery.removeEventListener('change', handleChange); 
-    };
+    if (typeof window !== "undefined") {
+      const storedTheme = localStorage.getItem("theme");
+      if (storedTheme) {
+        setTheme(storedTheme);
+      } else {
+        setTheme("light");
+      }
+      setIsWindowChecked(true);
+    }
   }, []);
 
-  function getInitialTheme() {
-    if (typeof window !== 'undefined') {
-      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    } else {
-      return 'light';
-    }
-  }
-
-  useEffect(() => {
-    localStorage.setItem('theme', theme);
-  }, [theme]);
-
   const toggleTheme = () => {
-    setTheme(theme === 'light'? 'dark' : 'light');
+    const newTheme = theme === "light" ? "dark" : "light";
+    localStorage.setItem("theme", newTheme);
+    setTheme(newTheme);
   };
+
+  if (!isWindowChecked) {
+    // A verificação do window ainda não foi concluída, então não renderize nada
+    return null;
+  }
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
@@ -48,8 +47,7 @@ export const ThemeProvider:  React.FC<{ children: React.ReactNode }> = ({ childr
 export const useTheme = () => {
   const context = useContext(ThemeContext);
   if (!context) {
-    throw new Error('useTheme must be used within a ThemeProvider');
+    throw new Error("useTheme must be used within a ThemeProvider");
   }
   return context;
 };
-
